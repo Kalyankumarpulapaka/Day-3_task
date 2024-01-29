@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* ||||||||||||||||||| Second task |||||||||||||||||||||||||||||||||*/
+      /*question :use the rest countries api url and display all the country flag in console*/
+
+
+      var kalyan = new XMLHttpRequest();
+      kalyan.open("GET", "https://restcountries.com/v2/all");
+
+      kalyan.send();
+
+      kalyan.onload = function () {
+        var data = JSON.parse(kalyan.response);
+        console.log(data[0]);
+
+        /*Display all countries Flags in the console*/
+
+        for (var i = 0; i < data.length; i++) {
+          console.log(data[i].flags);
+        }
+      }
+    </script>
+  </body>
+</html>

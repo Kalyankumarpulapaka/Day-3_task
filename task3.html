@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+     
+
+      var kalyan = new XMLHttpRequest();
+      kalyan.open("GET", "https://restcountries.com/v2/all");
+
+      kalyan.send();
+
+      kalyan.onload = function () {
+        var data = JSON.parse(kalyan.response);
+        console.log(data[0]);
+
+         /* ||||||||||||||||||| third task ||||||||||||||||||||||||||
+
+         /*use rest countries api url and print all countries names,regions,subregion and populations*/
+
+
+
+         /*Display all countries names in the console*/
+         for (var i = 0; i < data.length; i++) {
+          console.log(data[i].name); }
+
+          /*Display all countries regions in the console*/
+
+          for (var i = 0; i < data.length; i++) {
+          console.log(data[i].region);}
+
+           /*Display all countries Sub regions in the console*/
+
+           for (var i = 0; i < data.length; i++) {
+          console.log(data[i].subregion);}
+
+            /*Display all countries populations in the console*/
+            for (var i = 0; i < data.length; i++) {
+          console.log(data[i].population);}
+
+
+      }
+    </script>
+  </body>
+</html>
+
+      
